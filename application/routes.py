@@ -1,5 +1,6 @@
 from application import app, db
 from application.models import Games
+from flask import render_template
 
 @app.route('/add')
 def add():
@@ -30,3 +31,10 @@ def delete(id):
     db.session.commit()
     return f"The game with ID number: {game_to_delete.id} has been deleted!"
 
+@app.route('/ben')
+def ben():
+     return render_template('ben.html')
+
+@app.route('/harry')
+def harry():
+     return render_template('harry.html')
